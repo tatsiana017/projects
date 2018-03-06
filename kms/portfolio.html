@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Portfolio</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+<link href="t_style.css" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript">
+function clearText(field)
+{
+    if (field.defaultValue == field.value) field.value = '';
+    else if (field.value == '') field.value = field.defaultValue;
+}
+</script>
+
+<link rel="stylesheet" type="text/css" href="css/jquery.lightbox-0.5.css" />    
+    
+<!-- Файлы, используемые плагином Jquery Lightbox -->
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.lightbox-0.5.js"></script>
+<link rel="stylesheet" type="text/css" href="css/jquery.lightbox-0.5.css" media="screen" />
+<!-- / конец файлов, используемых плагин Jquery Lightbox  -->
+
+<!--  Включение JQuery плагин лайтбоксе -->
+<script type="text/javascript">
+$(function() {
+    $('#gallery a.box').lightBox();
+});
+</script>
+
+</head>
+<body>
+<div id="t_body_wrapper">
+<div id="t_wrapper">
+	    
+    <div id="t_header">
+    
+        <div id="site_title"><h1>Мультимедийная система</h1></div>
+        
+    </div> <!-- end of templatemo header -->
+    
+    <div id="t_menu">
+        <ul>
+            <li><a href="index.html" class="current">Главная</a></li>
+            <li><a href="teoriya.html">Теоритические сведения</a></li>
+            <li><a href="portfolio.html">Фотогалерея</a></li>
+            <li><a href="virtual.html" class="last">Виртуальный комплекс</a></li>
+        </ul>    	
+    </div> <!-- end of templatemo_menu -->
+    
+    <div id="t_main">
+    	<h2>Фотогалерея</h2> 
+       	<p>На рисунке 1 представлен генератор сигналов.<br>
+		Рисунок 3 представляет собой схематичную установку (рисунок 1 и 2) для исследования поперечных волн.
+		Она состоит из металлической струны АВ, один конец которой закреплен в точке А,
+		а ругой перекинут через блок В. К концу струны прикреплена чашка D, нагружая которую гирями, можно изменять натяжение струны.
+		вдоль струны может перемещаться постоянный магнит М.
+		По струне от генератора перемнных электрических колебаний звуквой частоты (ЗГ) пропускается ток.</p>
+        <div class="cleaner h30"></div>
+    
+    	<div id="gallery">
+   	  		<ul>
+            
+            	<li>
+                	<span><a href="#">Рисунок 1</a></span>
+                	<a class="box" rel="portfolio_group" href="images/gallery/image1.jpg" >
+                		<img src="images/gallery/image1-1.jpg"  />
+					</a>		
+			 	</li>
+                
+                              
+      			<li>
+      				<span><a href="#">Рисунок 2</a></span>
+                	<a class="box" rel="portfolio_group" href="images/gallery/image2.jpg" >
+                		<img src="images/gallery/image2-1.jpg" />
+		  			</a>
+				</li>
+            
+                <li class="lmb">
+      				<span><a href="#">Рисунок 3</a></span>
+                	<a class="box" rel="portfolio_group" href="images/gallery/image4.jpg" >
+                		<img src="images/gallery/image4-1.jpg" />
+		  			</a>
+				</li>
+                
+                               
+		  </ul>  
+      </div>
+	  
+	  <h2>Модель</h2>
+	  <param>
+	  <embed src="images\2d.swf" width="940" height="500">
+	  </embed>
+	  </param>
+	  
+        
+    </div>
+        
+        
+    </div> <!-- end of main -->
+	
+</div> <!-- end of templatemo wrapper -->
+</div> <!-- end of templatemo body wrapper -->
+
+<div id="t_footer_wrapper">
+
+	<div id="t_footer">
+    	Выполнила студентка 3 курса 2 группы Шихова Татьяна
+        <div class="cleaner"></div>
+	</div>
+    
+</div>
+
+</body>
+</html>
