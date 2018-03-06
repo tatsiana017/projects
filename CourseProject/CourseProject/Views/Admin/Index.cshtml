@@ -1,0 +1,54 @@
+﻿@model CourseProject.Models.Hotels
+@{
+    ViewBag.Title = "Index";
+}
+<div id="modDialog" class="modal fade">
+    <div id="dialogContent" class="modal-dialog"></div>
+</div>
+<h2>Администрирование</h2>
+<p class="text-success">@ViewBag.StatusMessage</p>
+<p> @Html.ActionLink("Добавить отель", "CreateHotel", "Admin", new { }, new { @class = "viewDialog" })</p>
+<p> @Html.ActionLink("Добавить комнату", "CreateRoom", "Admin", new { }, new { @class = "viewDialog" })</p>
+<p> @Html.ActionLink("Добавить зал", "CreateHall", "Admin", new { }, new { @class = "viewDialog" })</p>
+<table class="table">
+    <thead>
+        <tr><th>Name</th><th>Phone Number</th><th>Website</th></tr>
+    </thead>
+    <tbody>
+        @foreach (var hotel in ViewBag.Hotels)
+            {
+            <tr>
+                <td>@hotel.Name</td>
+                <td>@hotel.PhoneNumber</td>
+                <td>@hotel.WebSite</td>
+                <td>@Ajax.ActionLink("Список комнат", "ListRoom", "Admin", new { id = hotel.Id }, new AjaxOptions { UpdateTargetId = "listRoom" })</td>
+                <td>@Ajax.ActionLink("Список залов", "ListHall", "Admin", new { id = hotel.Id }, new AjaxOptions { UpdateTargetId = "listRoom" })</td>
+
+                <td>
+                    @using (Html.BeginForm("DeleteHotel", "Admin", FormMethod.Post))
+                    {
+                        <input type="hidden" name="Id" value="@hotel.Id" />
+                        <input type="submit" value="Удалить" class="btn btn-danger" style="width:75px" />
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div id="listRoom"></div>
+@section scripts{
+    <script type="text/javascript">
+        $(function () {
+            $.ajaxSetup({ cache: false });
+            $(".viewDialog").click(function (e) {
+                e.preventDefault();
+                $.get(this.href, function (data) {
+                    $('#dialogContent').html(data);
+                    $('#modDialog').modal('show');
+                });
+            });
+        })
+    </script>
+}
+
+
